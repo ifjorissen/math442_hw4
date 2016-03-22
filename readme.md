@@ -31,13 +31,13 @@ I (Isabella) did hws 1,3,4 and Alex did 5,6, and 7. The table summarizing our re
 
 | Code Number| No. Tests Failed | Names of Failed Tests | Comments |
 |---|---|---|---|
-| 1 | 4 | t_hash, t_del, t_sg, t_mem|see [Code Notes No. 1][]|
+| 1 | 4 | t_hash, t_del, t_sg, t_mem|see Code Notes No. 1|
 | 2 | 0 | - | All our tests pass on our implementation |
-| 3 | 6 | t_hash, t_del, t_sg, t_mem, t_space, t_dup|see [Code Notes No. 3][]|
-| 4 | 1 | t_hash |see [Code Notes No. 4][]|
-| 5 | 1 | t_hash |see [Code Notes No. 5][]|
-| 6 | 4 | t_hash, t_del, t_sg, t_mem |see [Code Notes No. 6][]|
-| 7 | 4 | t_hash, t_del, t_sg, t_mem |see [Code Notes No. 7][]|
+| 3 | 6 | t_hash, t_del, t_sg, t_mem, t_space, t_dup|see Code Notes No. 3|
+| 4 | 1 | t_hash |see Code Notes No. 4|
+| 5 | 1 | t_hash |see Code Notes No. 5|
+| 6 | 4 | t_hash, t_del, t_sg, t_mem |see Code Notes No. 6|
+| 7 | 4 | t_hash, t_del, t_sg, t_mem |see Code Notes No. 7|
 
 ##### Code Notes No. 1
 1. Lots of warnings when compiling with -Wall, -pedantic, etc. 

@@ -31,15 +31,15 @@ I (Isabella) did hws 1,3,4 and Alex did 5,6, and 7. The table summarizing our re
 
 | Code Number| No. Tests Failed | Names of Failed Tests | Comments |
 |---|---|---|---|
-| 1 | 4 | t_hash, t_del, t_sg, t_mem|see [Code Notes No. 1](No1)|
+| 1 | 4 | t_hash, t_del, t_sg, t_mem|see [Code Notes No. 1][]|
 | 2 | 0 | - | All our tests pass on our implementation |
-| 3 | 6 | t_hash, t_del, t_sg, t_mem, t_space, t_dup|see [Code Notes No. 3](No3)|
-| 4 | 1 | t_hash |see [Code Notes No. 4](No4)|
-| 5 | 1 | t_hash |see [Code Notes No. 5](No5)|
-| 6 | 4 | t_hash, t_del, t_sg, t_mem |see [Code Notes No. 6](No6)|
-| 7 | 4 | t_hash, t_del, t_sg, t_mem |see [Code Notes No. 7](No7)|
+| 3 | 6 | t_hash, t_del, t_sg, t_mem, t_space, t_dup|see [Code Notes No. 3][]|
+| 4 | 1 | t_hash |see [Code Notes No. 4][]|
+| 5 | 1 | t_hash |see [Code Notes No. 5][]|
+| 6 | 4 | t_hash, t_del, t_sg, t_mem |see [Code Notes No. 6][]|
+| 7 | 4 | t_hash, t_del, t_sg, t_mem |see [Code Notes No. 7][]|
 
-##### [Code Notes No. 1](No1)
+##### Code Notes No. 1
 1. Lots of warnings when compiling with -Wall, -pedantic, etc. 
 2. Broke cache api (using old cache.h)
 3. t_sg fails with this error: `our_test(25397,0x7fff79b21000) malloc: *** error for object 0x7fcda0c036b0: pointer being freed was not allocated`. After looking in gdb, seems to be an issue with destroy_cache?
@@ -48,7 +48,7 @@ I (Isabella) did hws 1,3,4 and Alex did 5,6, and 7. The table summarizing our re
 6. Segfault on the t_del test.
 7. t_hash fails. `!!!!FAILURE!!!!! hash function not deterministic: value fail`
 
-##### [Code Notes No. 3](No3)
+##### Code Notes No. 3
 1. The `create_meta` function doesn't return anything and isn't a void function. 
 2. There are some extra functions defined in cache.h. Also using _key_t and val_t types.
 3. When trying to run their own tests (`make` and then `./out`) I get a seg fault:
@@ -88,13 +88,13 @@ I (Isabella) did hws 1,3,4 and Alex did 5,6, and 7. The table summarizing our re
 ```
 8. All other tests fail similarly....
 
-##### [Code Notes No. 4](No4)
+##### Code Notes No. 4
 1. Lots of warnings when compiling with -Wall, -pedantic, etc.
 2. Uses the old api, including val_type, key_type
 3. Broke the API: cache_get() no longer takes `val_size` parameter.
-4. All tests pass except for t_hash 
+4. All tests pass except for t_hash. 
 
-##### [Code Notes No. 5](No5) 
+##### Code Notes No. 5 
 1. broke `create_cache` API 
 2. Use `key_t/val_t` instead of `key_type` and `val_type`
 3. Turn off warnings in makefile
@@ -104,14 +104,14 @@ I (Isabella) did hws 1,3,4 and Alex did 5,6, and 7. The table summarizing our re
    of memory.
 6. The makefile isn't working properly. When a file is updated, object files are not recompiled/used. |
 
-##### [Code Notes No. 6](No6)
+##### Code Notes No. 6
 1. broke `create_cache` API
 2. delete test segfaults. `item_ptr` is NULL on line cache.c:82
 3. `hash_function` test failed for same reason as Alec
 4. `test_set_get` fails on `cache_get`. On line LRU.c:52, `node_ptr` is NULL
 5. `test_memory_overflow` fails. Memory returned is simply wrong.
 
-##### [Code Notes No. 7](No7)
+##### Code Notes No. 7
 1. Couldn't compile because missing function. lru_replacement.c:138 `place_items_in_array(num_del_ids,policy->bottom)`
 2. `test_delete` fails. Could not access the memory of the key in `cache_delete`
 3. hash function -- same problem with memory
